@@ -1,9 +1,13 @@
 import { Component } from 'react';
 
-export default class App extends Component {
+import '../../styles/sample.scss';
+
+export default class Sample extends Component {
   render() {
     return (
-      <h1>Hello World</h1>
+      <div className="tester">
+        <h1>Sup</h1>
+      </div>
     );
   }
 }
