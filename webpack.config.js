@@ -8,19 +8,28 @@ const config = {
   context: resolve(__dirname, 'src'),
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    './js/index.js',
+    './index.js',
   ],
   output: {
     filename: 'bundle.js',
     path: resolve(__dirname, 'dist'),
     publicPath: '/'
   },
+  resolve: {
+    extensions: ['.js', '.json', '.jsx'],
+    alias: {
+      components: resolve(__dirname, 'src/components/'),
+      actions: resolve(__dirname, 'src/actions/'),
+      helpers: resolve(__dirname, 'src/helpers/'),
+      reducers: resolve(__dirname, 'src/reducers/'),
+      store: resolve(__dirname, 'src/store/')
+    }
+  },
   devServer: {
     hot: true,
     contentBase: resolve(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: '/',
+    historyApiFallback: true
   },
   module: {
     rules: [
