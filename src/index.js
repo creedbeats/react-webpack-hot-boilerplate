@@ -15,7 +15,6 @@ render(Container);
 
 if (module.hot) {
   module.hot.accept('./container', () => {
-    const newContainer = require('./container').default;
-    render(newContainer);
+    render(Container);
   });
 }
