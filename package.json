@@ -4,7 +4,7 @@
   "description": "Visually connect elements on the React DOM elements with SVG",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --hot",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -38,6 +38,7 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
+    "connected-react-router": "^4.2.3",
     "history": "~4.6.3",
     "prop-types": "~15.5.10",
     "react": "^15.6.1",

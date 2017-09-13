@@ -6,12 +6,14 @@ const autoprefixer = require('autoprefixer');
 const config = {
   devtool: 'cheap-module-eval-source-map',
   context: resolve(__dirname, 'src'),
-  entry: [
-    'react-hot-loader/patch',
-    './index.js',
-  ],
+  entry: {
+    app: [
+      'react-hot-loader/patch',
+      './index.js',
+    ]
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: resolve(__dirname, 'dist'),
     publicPath: '/'
   },
@@ -26,7 +28,6 @@ const config = {
     }
   },
   devServer: {
-    hot: true,
     contentBase: resolve(__dirname, 'dist'),
     publicPath: '/',
     historyApiFallback: true
@@ -46,7 +47,6 @@ const config = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: `${__dirname}/src/index.html`,
       filename: 'index.html',
